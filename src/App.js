@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
-import './App.css';
+import React from 'react';
+import '../styles//styles.css';
+import Nav from './components/Nav';
+import AboutMe from './components/AboutMe';
+import PageSwitcher from './components/PageSwitcher';
 
-class App extends Component {
-  render() {
+
+const App = () => {
     return (
       <div className="App">
-        <p className="Start">
-          Hello portfolio
-        </p>
+        <Nav />
+        <div className="main">
+          <AboutMe />
+          <PageSwitcher />
+        </div>
       </div>
     );
-  }
 }
 
 export default App;
