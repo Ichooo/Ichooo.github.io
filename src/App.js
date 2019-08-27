@@ -1,19 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles//styles.css';
 import Nav from './components/Nav';
-import AboutMe from './components/AboutMe';
+import AboutMe from './components/pages/AboutMe';
 import PageSwitcher from './components/PageSwitcher';
-
+import Portfolio from './components/pages/Portfolio';
+import Commitments from './components/pages/Commitments';
+import SocialIcons from './components/SocialIcons';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 
 const App = () => {
+
+  const [currentPage, setCurrentPage] = useState(0);
+
     return (
-      <div className="App">
-        <Nav />
-        <div className="main">
-          <AboutMe />
-          <PageSwitcher />
+      <Router>
+        <div className="App">
+          <Nav />
+          <SocialIcons />
+          <PageSwitcher currPage={currentPage} setCurrPage={setCurrentPage}/>
+          <div className="main">
+            <Route exact path="/" component={AboutMe}/>
+            <Route path="/portfolio" component={Portfolio}/>
+            <Route path="/commitments" component={Commitments}/>
+          </div>
         </div>
-      </div>
+      </Router>
     );
 }
 

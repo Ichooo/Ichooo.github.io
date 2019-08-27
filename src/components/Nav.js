@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 const Nav = () => {
     return (
         <nav>
-            <h3 className="logo" >Pontus Arnesson</h3>
+            <Link to="/">
+                <h3 className="logo" >Pontus Arnesson</h3>
+            </Link>
             <svg 
                 className="menu"
                 width="43" 

@@ -1,8 +1,11 @@
+// Mixins
 @mixin flexCenter() {
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+// Variables
 
 $primaryWhite: #ebebeb;
 
@@ -16,17 +19,17 @@ $primaryWhite: #ebebeb;
 
 @font-face {
   font-family: QuicksandRegular;
-  src: url("../fonts/Quicksand-Regular.ttf");
+  src: url("../src/fonts/Quicksand-Regular.ttf");
 }
 
 @font-face {
   font-family: QuicksandBold;
-  src: url("../fonts/Quicksand-Bold.ttf");
+  src: url("../src/fonts/Quicksand-Bold.ttf");
 }
 
 @font-face {
   font-family: QuicksandLight;
-  src: url("../fonts/Quicksand-Light.ttf");
+  src: url("../src/fonts/Quicksand-Light.ttf");
 }
 
 .App {
@@ -35,6 +38,8 @@ $primaryWhite: #ebebeb;
   font-family: QuicksandRegular;
   color: $primaryWhite;
 }
+
+// Nav
 
 nav{
   min-height: 10vh;
@@ -49,16 +54,25 @@ nav{
 .logo {
   cursor: pointer;
 }
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .menu {
   cursor: pointer;
 }
 
+// Main
 .main {
   min-height: 90vh;
   display: grid;
   grid-template-columns: 5% 1fr 2fr 1fr 5%;
+  
 }
 
+// About me
 .center-container {
   grid-column: 3/4;
   justify-self: center;
@@ -91,15 +105,52 @@ nav{
 }
 .about-me-text {
   font-family: QuicksandLight;
-  font-size: 20px;
+  font-size: 18px;
 }
 
+// Portfolio
+.portfolio {
+  min-height: 100vh;
+  grid-column: 1/6;
+}
+.box {
+    height: 40vh;
+    width: 40vh;
+    background: red;
+}
+
+.portfolio-container {
+    display: flex;
+    flex-direction: row;
+}
+.project{
+    background: #b8b4b4;
+    margin: 5vh;
+    height: 25vh;
+    width: 25vh;
+    list-style: none;
+}
+.project-title {
+    color: black;
+}
+
+// Commitments
+.commitments {
+    min-height: 100vh;
+    grid-column: 1/6;
+}
+.commitments-box {
+    height: 40vh;
+    width: 40vh;
+    background: green;
+}
+
+// Style for page switcher
 .pages {
     position: absolute;
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
-    
   }
 .pages > div {
     display: flex;
@@ -108,7 +159,6 @@ nav{
     height: 10vh;
   }
 .pages svg {
-    transform: scale(2);
     opacity: 0.5;
     cursor: pointer;
     :hover {
@@ -118,12 +168,52 @@ nav{
     }
 }
 
-.pages svg.active {
+.active svg{
     opacity: 1;
 }
 .pages h3 {
     margin: 30px;
 }
+
+// Style for social icons
+.social-container {
+    width: 10vh;
+    height: 50vh;
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    background: $primaryWhite;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    justify-content: space-around;
+    img {
+        height: 40px;
+    }
+    :hover {    
+        transform: scale(1.1);
+        transition: 0.3s ease-in-out;
+        transform-origin: center;
+    }
+}
+
+// Screen responsivness
+
+@media (max-width: 900px) {
+    .pages h3{
+        color: transparent;
+    }
+}
+
+@media (max-width: 600px) {
+    .social-container {
+        display: none;
+    }
+}
+
 
 
 
