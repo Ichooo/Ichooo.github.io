@@ -1,18 +1,14 @@
 [
     {
         "title": "project 1",
-        "image": "../../img/myself.jpg"
+        "image": "myself"
     },
     {
         "title": "project 2",
-        "image": "../../img/myself.jpg"
+        "image": "myself"
     },
     {
         "title": "project 3",
-        "image": "../../img/myself.jpg"
-    },
-    {
-        "title": "project 4",
-        "image": "../../img/myself.jpg"
+        "image": "myself"
     }
 ]

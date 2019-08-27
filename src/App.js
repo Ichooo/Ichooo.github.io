@@ -19,9 +19,9 @@ const App = () => {
           <SocialIcons />
           <PageSwitcher currPage={currentPage} setCurrPage={setCurrentPage}/>
           <div className="main">
-            <Route exact path="/" component={AboutMe}/>
-            <Route path="/portfolio" component={Portfolio}/>
-            <Route path="/commitments" component={Commitments}/>
+            <Route path="/" component={AboutMe}/>
+            <Route path="/" component={Portfolio}/>
+            <Route path="/" component={Commitments}/>
           </div>
         </div>
       </Router>

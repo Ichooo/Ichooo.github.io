@@ -1,5 +1,4 @@
-
-import React, { useEffect } from 'react';
+import React from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 
 const PageSwitcher = ({currPage, setCurrPage}) => {
@@ -9,7 +8,7 @@ const PageSwitcher = ({currPage, setCurrPage}) => {
     }
 
     //TODO: switching page by scroll not working properly
-    const handleScroll = (e) => {
+    /*const handleScroll = (e) => {
         if (e.deltaY > 0) { 
             if (currPage === 2) {
                 setCurrPage(0);
@@ -41,7 +40,7 @@ const PageSwitcher = ({currPage, setCurrPage}) => {
             setTimeout(() => (inThrottle = false), limit);
           }
         };
-      }
+      }*/
 
     return (
         <div className="pages">

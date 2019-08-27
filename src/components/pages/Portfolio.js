@@ -3,12 +3,14 @@ import projects from '../../assets/projects';
 
 const Portfolio = () => {
     return (
-        <div className="center-container">
-            <div className="portfolio-container">  
+        <div className="portfolio">
+        <h3 className="portfolio-title"> PORTFOLIO</h3>
+            <div className="portfolio-container">
                 {projects.map((project, index) => {
                     return (
-                        <div className="project">
+                        <div key={index} className="project">
                             <h3 className="project-title">{project.title}</h3>
+                            <img className="project-image" src={require(`../../img/${project.image}.jpg`)} alt="projectImg"/>
                         </div>  
                 )
             })}
