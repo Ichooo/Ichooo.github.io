@@ -78,15 +78,15 @@ a {
 }
 
 .profile-pic-border {
-  height: 40vh;
-  width: 40vh;
+  height: 280px;
+  width: 280px;
   border-radius: 50%;
   border: 3px solid $primaryWhite;
   display: flex;
   @include flexCenter();
   margin: auto;
   :hover{
-    transform: scale(1.05);
+    transform: scale(1.1);
     transition: 0.3s ease-in-out;
   }
 }
@@ -94,7 +94,6 @@ a {
 .me-img {
   border-radius: 50%;
   height: 250px;
-  
 }
 
 .about-me-title {
@@ -200,6 +199,7 @@ a {
   }
 .pages svg {
     opacity: 0.5;
+    overflow: visible;
     cursor: pointer;
     :hover {
         transform: scale(1.4);

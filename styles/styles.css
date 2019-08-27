@@ -81,8 +81,8 @@ a {
 }
 
 .profile-pic-border {
-  height: 40vh;
-  width: 40vh;
+  height: 280px;
+  width: 280px;
   border-radius: 50%;
   border: 3px solid #ebebeb;
   display: -webkit-box;
@@ -99,8 +99,8 @@ a {
 }
 
 .profile-pic-border :hover {
-  -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
@@ -266,6 +266,7 @@ a {
 
 .pages svg {
   opacity: 0.5;
+  overflow: visible;
   cursor: pointer;
 }
 

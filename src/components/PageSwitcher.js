@@ -2,45 +2,25 @@ import React from 'react';
 import { NavLink, Redirect } from 'react-router-dom';
 
 const PageSwitcher = ({currPage, setCurrPage}) => {
+    const aboutPage = document.querySelector('.about-me');
+    const portfolioPage = document.querySelector('.portfolio');
+    const commitmentsPage = document.querySelector('.commitments');
 
     const onChangPage = (page) => {
         setCurrPage(page);
-    }
-
-    //TODO: switching page by scroll not working properly
-    /*const handleScroll = (e) => {
-        if (e.deltaY > 0) { 
-            if (currPage === 2) {
-                setCurrPage(0);
-            } else {
-                setCurrPage(currPage += 1);
-            }
-        } else { 
-            if (currPage === 0) {
-                setCurrPage(2);
-            } else {
-                setCurrPage(currPage -= 1);
-            }
+        switch(page) {
+            case 0:
+                window.scrollTo({top: 0, behavior: 'smooth'});               
+                break;
+            case 1:
+                portfolioPage.scrollIntoView({behavior: 'smooth'});
+                break;
+            case 2:
+                commitmentsPage.scrollIntoView({behavior: 'smooth'});
+                break;
+            
         }
     }
-
-    useEffect(() => {
-        document.addEventListener('wheel', throttle(handleScroll, 1500));
-        document.addEventListener('touchmove', throttle(handleScroll, 1500));
-    },[]);
-
-    function throttle(func, limit) {
-        let inThrottle;
-        return function() {
-          const args = arguments;
-          const context = this;
-          if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => (inThrottle = false), limit);
-          }
-        };
-      }*/
 
     return (
         <div className="pages">
