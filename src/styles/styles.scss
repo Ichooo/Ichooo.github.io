@@ -5,6 +5,21 @@
     justify-content: center;
 }
 
+@mixin bubbleBorder() {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 3px solid $primaryWhite;
+    display: flex;
+    @include flexCenter();
+    margin: auto;
+    margin: 1vh;
+    > :hover {
+        transform: scale(1.22);
+        transition: 0.3s ease-in-out;
+    }
+}
+
 // Variables
 
 $primaryWhite: #ebebeb;
@@ -19,17 +34,17 @@ $primaryWhite: #ebebeb;
 
 @font-face {
   font-family: QuicksandRegular;
-  src: url("../src/fonts/Quicksand-Regular.ttf");
+  src: url("../fonts/Quicksand-Regular.ttf");
 }
 
 @font-face {
   font-family: QuicksandBold;
-  src: url("../src/fonts/Quicksand-Bold.ttf");
+  src: url("../fonts/Quicksand-Bold.ttf");
 }
 
 @font-face {
   font-family: QuicksandLight;
-  src: url("../src/fonts/Quicksand-Light.ttf");
+  src: url("../fonts/Quicksand-Light.ttf");
 }
 
 .App {
@@ -66,7 +81,7 @@ a {
 // Main
 .main {
   display: grid;
-  grid-template-columns: 5% 1fr 2fr 1fr 5%;
+  grid-template-columns: 5% 0.8fr 2.4fr 0.8fr 5%;
 }
 
 // About me
@@ -122,12 +137,15 @@ a {
     padding: 20px;
 }
 
+.project-border {
+    @include bubbleBorder();
+}
+
 .project{
     border-radius: 50%;
     background: #87A8B9;
-    margin: 1vh;
-    height: 30vh;
-    width: 30vh;
+    height: 160px;
+    width: 160px;
     list-style: none;
     text-align: center;
     @include flexCenter();
@@ -138,12 +156,12 @@ a {
     color: $primaryWhite;
 }
 .project-image {
-    height: 100px;
+    height: 80px;
 }
 
 // Commitments
 .commitments {
-    width: 90%;
+    width: 100%;
     min-height: 100vh;
     grid-column: 3/4;
     text-align: center;
@@ -162,24 +180,27 @@ a {
       width: 40vh;
       background: red;
   }
+
+  .commitment-border {
+    @include bubbleBorder();
+}
   
   .commitment{
-      border-radius: 50%;
-      background: #87A8B9;
-      margin: 5vh;
-      height: 25vh;
-      width: 25vh;
-      list-style: none;
-      text-align: center;
-      @include flexCenter();
-      flex-direction: column;
-      justify-content: space-around;
+    border-radius: 50%;
+    background: #87A8B9;
+    height: 160px;
+    width: 160px;
+    list-style: none;
+    text-align: center;
+    @include flexCenter();
+    flex-direction: column;
+    justify-content: space-around;
   }
   .commitment-title {
-      color: black;
+      color: $primaryWhite;
   }
   .commitment-image {
-      height: 100px;
+      height: 80px;
   }
 
 // Style for page switcher

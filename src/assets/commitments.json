@@ -1,21 +1,14 @@
 [
     {
-        "title": "Commitment 1",
+        "title": "Commit 1",
         "image": "myself"
     },
     {
-        "title": "Commitment 2",
+        "title": "Commit 2",
         "image": "myself"
     },
     {
-        "title": "Commitment 3",
-        "image": "myself"
-    },
-    {
-        "title": "Commitment 4",
-        "image": "myself"
-    }, {
-        "title": "Commitment 5",
+        "title": "Commit 3",
         "image": "myself"
     }
 ]

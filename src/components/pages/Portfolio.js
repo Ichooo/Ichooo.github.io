@@ -8,10 +8,12 @@ const Portfolio = () => {
             <div className="portfolio-container">
                 {projects.map((project, index) => {
                     return (
-                        <div key={index} className="project">
-                            <h3 className="project-title">{project.title}</h3>
-                            <img className="project-image" src={require(`../../img/${project.image}.jpg`)} alt="projectImg"/>
-                        </div>  
+                        <div className="commitment-border">
+                            <div key={index} className="project">
+                                <h3 className="project-title">{project.title}</h3>
+                                <img className="project-image" src={require(`../../img/${project.image}.jpg`)} alt="projectImg"/>
+                            </div>  
+                        </div>
                 )
             })}
             </div>

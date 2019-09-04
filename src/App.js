@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import '../styles//styles.css';
+import './styles//styles.css';
 import Nav from './components/Nav';
 import AboutMe from './components/pages/AboutMe';
 import PageSwitcher from './components/PageSwitcher';
