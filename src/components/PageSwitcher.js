@@ -1,38 +1,90 @@
-import React from 'react';
-import { NavLink, Redirect } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { NavLink, withRouter } from 'react-router-dom';
 
-const PageSwitcher = ({currPage, setCurrPage}) => {
-    const aboutPage = document.querySelector('.about-me');
-    const portfolioPage = document.querySelector('.portfolio');
-    const commitmentsPage = document.querySelector('.commitments');
-
+// Component for page routing
+const PageSwitcher = (props) => {
+    
+    // Change page on click
     const onChangPage = (page) => {
-        setCurrPage(page);
+        props.setCurrPage(page);
+
         switch(page) {
             case 0:
-                window.scrollTo({top: 0, behavior: 'smooth'});               
+                window.scrollTo({top: 0, behavior: 'smooth'});   
                 break;
             case 1:
-                portfolioPage.scrollIntoView({behavior: 'smooth'});
+                document.querySelector('.portfolio').scrollIntoView({behavior: 'smooth'});
                 break;
             case 2:
-                commitmentsPage.scrollIntoView({behavior: 'smooth'});
+                document.querySelector('.commitments').scrollIntoView({behavior: 'smooth'});
                 break;
-            
+            default:
+                break;
         }
     }
 
+    // Update url depending on which page the user currently is on
+    const scrollHandeler = () => {
+        const winScroll = document.documentElement.scrollTop
+      
+        const height =
+          document.documentElement.scrollHeight -
+          document.documentElement.clientHeight
+      
+        const scrolled = winScroll / height
+
+            if (scrolled < 0.33) {
+                props.setCurrPage(0);
+                props.history.push('/');
+            } else if (scrolled > 0.33 && scrolled < 0.66 ) {
+                props.setCurrPage(1);
+                props.history.push('/portfolio');
+            } else {
+                props.setCurrPage(2);
+                props.history.push('/commitments');
+            }
+    }
+
+    // Locates correct page when entering site
+    useEffect(() => {
+        switch(location.pathname.toLowerCase())  {
+            case "/":
+                break;
+            case "/portfolio":
+                onChangPage(1);
+                break;
+            case "/commitments":
+                onChangPage(2);
+                break;
+            default:
+                break;
+        }
+
+        document.addEventListener('wheel', throttle(scrollHandeler, 500));
+        document.addEventListener('wheel', throttle(scrollHandeler, 500));
+        
+    },[])
+
+    function throttle(func, limit) {
+        let inThrottle;
+        return function() {
+          const args = arguments;
+          const context = this;
+          if (!inThrottle) {
+            func.apply(context, args);
+            inThrottle = true;
+            setTimeout(() => (inThrottle = false), limit);
+          }
+        };
+      }
+
     return (
         <div className="pages">
-            {currPage === 0 ? <Redirect exact to="/" /> : null}
-            {currPage === 1 ? <Redirect to="/portfolio" /> : null}
-            {currPage === 2 ? <Redirect to="/commitments" /> : null}
-            {console.log('current page: ' + currPage)}
             <div className="page-about">
                 <h3 className="dot-title-1">About me</h3>
                 <NavLink exact to="/">
                     <svg 
-                        onClick={() => {onChangPage(0)}}
+                        
                         className="dot-1"
                         width="24" 
                         height="24" 
@@ -62,7 +114,7 @@ const PageSwitcher = ({currPage, setCurrPage}) => {
             </div>
             <div className="page-commitments">
                 <h3 className="dot-titlel-3">Commitments</h3>
-                <NavLink to="/Commitments">
+                <NavLink to="/commitments">
                     <svg 
                         onClick={() => {onChangPage(2)}}
                         className="dot"
@@ -80,4 +132,4 @@ const PageSwitcher = ({currPage, setCurrPage}) => {
     )
 }
 
-export default PageSwitcher;
+export default withRouter(PageSwitcher);

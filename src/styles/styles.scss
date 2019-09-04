@@ -48,7 +48,7 @@ $primaryWhite: #ebebeb;
 }
 
 .App {
-  background: linear-gradient(#87A8B9, #0D4560);
+  background: linear-gradient(#87A8B9 0%, #0D4560 33%, #0F2635 100%);
   min-height: 100vh;
   font-family: QuicksandRegular;
   color: $primaryWhite;
@@ -89,7 +89,6 @@ a {
   grid-column: 3/4;
   justify-self: center;
   text-align: center;
-  min-height: 100vh;
 }
 
 .profile-pic-border {
@@ -123,6 +122,7 @@ a {
 // Portfolio
 .portfolio {
     width: 100%;
+    margin-top: 25vh;
     min-height: 100vh;
     grid-column: 3/4;
     text-align: center;
@@ -161,6 +161,7 @@ a {
 
 // Commitments
 .commitments {
+    margin-top: 25vh;
     width: 100%;
     min-height: 100vh;
     grid-column: 3/4;
