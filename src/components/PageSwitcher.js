@@ -28,7 +28,7 @@ const PageSwitcher = props => {
 
   // Update url depending on which page the user currently is on
   const scrollHandeler = () => {
-    const winScroll = document.documentElement.scrollTop;
+    const winScroll = window.pageYOffset;
 
     const height =
       document.documentElement.scrollHeight -

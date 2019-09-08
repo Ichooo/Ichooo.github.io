@@ -23,7 +23,7 @@ class SocialIcons extends Component {
                 <img className="fb-logo" src={fbLogo} alt="facebook"></img> 
             </a>
             <a 
-                href="https://github.com/Ichooo"
+                href="https://github.com/arnessonpontus"
                 target="_blank" rel="noopener noreferrer"
                 >
                 <img className="github-logo" src={GHLogo} alt="github"></img> 
