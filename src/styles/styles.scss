@@ -85,8 +85,10 @@ a {
 // Style for social icons
 @import './components/SocialIcons.scss';
 
-// Screen responsivness
+// Modal
+@import './components/Modal.scss';
 
+// Screen responsivness
 @media (max-width: 1040px) {
     .pages h3{
         color: transparent;

@@ -381,6 +381,19 @@ a {
           transform-origin: center;
 }
 
+.modal-container {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  background: red;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 @media (max-width: 1040px) {
   .pages h3 {
     color: transparent;

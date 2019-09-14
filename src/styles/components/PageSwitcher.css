@@ -1,0 +1,46 @@
+.pages {
+  position: fixed;
+  right: 5%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.pages > div {
+  text-align: end;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 10vh;
+}
+
+.pages svg {
+  opacity: 0.5;
+  overflow: visible;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.pages svg :hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+}
+
+.active svg {
+  opacity: 1;
+}
+
+.pages h3 {
+  margin: 30px;
+}
+/*# sourceMappingURL=PageSwitcher.css.map */
