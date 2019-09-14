@@ -381,7 +381,7 @@ a {
           transform-origin: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1040px) {
   .pages h3 {
     color: transparent;
   }
@@ -389,6 +389,9 @@ a {
 
 @media (max-width: 600px) {
   .social-container {
+    display: none;
+  }
+  .pages {
     display: none;
   }
 }

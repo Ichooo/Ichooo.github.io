@@ -1,0 +1,20 @@
+@mixin flexCenter() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin bubbleBorder() {
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    border: 3px solid $primaryWhite;
+    display: flex;
+    @include flexCenter();
+    margin: auto;
+    margin: 1vh;
+    > :hover {
+        transform: scale(1.22);
+        transition: 0.3s ease-in-out;
+    }
+}

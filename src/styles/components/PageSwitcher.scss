@@ -1,0 +1,32 @@
+.pages {
+    position: fixed;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    
+  }
+.pages > div {
+    text-align: end;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 10vh;
+  }
+.pages svg {
+    opacity: 0.5;
+    overflow: visible;
+    cursor: pointer;
+    margin-right: 8px;
+    :hover {
+        transform: scale(1.2);
+        transition: 0.2s ease-in-out;
+        transform-origin: center;
+    }
+}
+
+.active svg{
+    opacity: 1;
+}
+.pages h3 {
+    margin: 30px;
+}

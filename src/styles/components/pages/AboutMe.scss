@@ -1,0 +1,35 @@
+
+.about-me {
+    grid-column: 3/4;
+    justify-self: center;
+    text-align: center;
+    min-height: 90vh;
+  }
+  
+  .profile-pic-border {
+    height: 280px;
+    width: 280px;
+    border-radius: 50%;
+    border: 3px solid $primaryWhite;
+    display: flex;
+    @include flexCenter();
+    margin: auto;
+    :hover{
+      transform: scale(1.1);
+      transition: 0.3s ease-in-out;
+    }
+  }
+  
+  .me-img {
+    border-radius: 50%;
+    height: 250px;
+  }
+  
+  .about-me-title {
+    font-size: 40px;
+    padding: 20px;
+  }
+  .about-me-text {
+    font-family: QuicksandLight;
+    font-size: 18px;
+  }

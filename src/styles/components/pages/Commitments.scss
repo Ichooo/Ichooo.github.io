@@ -1,0 +1,42 @@
+.commitments {
+    width: 100%;
+    min-height: 100vh;
+    grid-column: 3/4;
+    text-align: center;
+  }
+  .commitments-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .commitments-title {
+      font-size: 40px;
+      padding: 20px;
+  }
+  .box {
+      height: 40vh;
+      width: 40vh;
+      background: red;
+  }
+
+  .commitment-border {
+    @include bubbleBorder();
+}
+  
+  .commitment{
+    border-radius: 50%;
+    background: #87A8B9;
+    height: 160px;
+    width: 160px;
+    list-style: none;
+    text-align: center;
+    @include flexCenter();
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .commitment-title {
+      color: $primaryWhite;
+  }
+  .commitment-image {
+      height: 80px;
+  }
