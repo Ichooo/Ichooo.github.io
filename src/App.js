@@ -7,11 +7,15 @@ import Portfolio from "./components/pages/Portfolio";
 import Commitments from "./components/pages/Commitments";
 import SocialIcons from "./components/SocialIcons";
 import Modal from "./components/Modal";
+import ReactGA from "react-ga";
 import { Route, BrowserRouter as Router } from "react-router-dom";
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState(0);
   const [modalDetails, setModalDetails] = useState({ isOpen: false, index: 0 });
+
+  ReactGA.initialize("UA-151646007-1");
+  ReactGA.pageview(window.location.pathname + window.location.search);
 
   return (
     <Router>
