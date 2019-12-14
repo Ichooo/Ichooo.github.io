@@ -5,23 +5,7 @@
     justify-content: center;
 }
 
-@mixin bubbleBorder() {
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    border: 3px solid $primaryWhite;
-    display: flex;
-    @include flexCenter();
-    margin: auto;
-    margin: 1vh;
-    > :hover {
-        transform: scale(1.22);
-        transition: 0.3s ease-in-out;
-    }
-}
-
 // Variables
-
 $primaryWhite: #ebebeb;
 
 *,
@@ -68,7 +52,7 @@ nav{
 .logo {
   cursor: pointer;
   margin-left: 8px;
-}
+} 
 
 a {
     text-decoration: none;
@@ -87,7 +71,7 @@ a {
 }
 
 // About me
-.about-me {
+.about-me-container {
   grid-column: 3/4;
   justify-self: center;
   text-align: center;
@@ -104,16 +88,16 @@ a {
   margin: auto;
   :hover{
     transform: scale(1.1);
-    transition: 0.3s ease-in-out;
   }
 }
 
 .me-img {
   border-radius: 50%;
   height: 250px;
+  transition: all 0.3s ease-in-out;
 }
 
-.about-me-title {
+.section-title {
   font-size: 40px;
   padding: 20px;
 }
@@ -122,43 +106,21 @@ a {
   font-size: 18px;
 }
 
-// Portfolio
-.portfolio {
+// Projects
+.projects {
     width: 100%;
     min-height: 100vh;
     grid-column: 3/4;
     text-align: center;
 }
-.portfolio-container {
+.projects-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.portfolio-title {
+.section-title {
     font-size: 40px;
     padding: 20px;
-}
-
-.project-border {
-    @include bubbleBorder();
-}
-
-.project{
-    border-radius: 50%;
-    background: #87A8B9;
-    height: 160px;
-    width: 160px;
-    list-style: none;
-    text-align: center;
-    @include flexCenter();
-    flex-direction: column;
-    justify-content: space-around;
-}
-.project-title {
-    color: $primaryWhite;
-}
-.project-image {
-    height: 80px;
 }
 
 // Commitments
@@ -167,43 +129,48 @@ a {
     min-height: 100vh;
     grid-column: 3/4;
     text-align: center;
+    
   }
   .commitments-container {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
   }
-  .commitments-title {
-      font-size: 40px;
-      padding: 20px;
-  }
-  .box {
-      height: 40vh;
-      width: 40vh;
-      background: red;
-  }
 
-  .commitment-border {
-    @include bubbleBorder();
-}
-  
-  .commitment{
+  .bubble-border {
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
-    background: #87A8B9;
-    height: 160px;
-    width: 160px;
-    list-style: none;
-    text-align: center;
+    border: 3px solid $primaryWhite;
+    display: flex;
     @include flexCenter();
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .commitment-title {
-      color: $primaryWhite;
-  }
-  .commitment-image {
-      height: 80px;
-  }
+    margin: auto;
+    margin: 1vh;
+    > :hover {
+        transform: scale(1.22);
+    }
+}
+
+// Project and commitment bubbles
+.bubble{
+  border-radius: 50%;
+  background: #87A8B9;
+  height: 160px;
+  width: 160px;
+  list-style: none;
+  text-align: center;
+  @include flexCenter();
+  flex-direction: column;
+  justify-content: space-around;
+  transition: all 0.3s ease-in-out;
+}
+
+.bubble-title {
+  color: $primaryWhite;
+}
+.bubble-image {
+  height: 80px;
+}
 
 // Style for page switcher
 .pages {
@@ -211,7 +178,6 @@ a {
     right: 5%;
     top: 50%;
     transform: translateY(-50%);
-    
   }
 .pages > div {
     text-align: end;
@@ -219,6 +185,7 @@ a {
     align-items: center;
     justify-content: space-between;
     height: 10vh;
+    -webkit-tap-highlight-color: transparent;
   }
 .pages svg {
     opacity: 0.5;
@@ -240,7 +207,7 @@ a {
 }
 
 // Style for social icons
-.social-container {
+.social-cont {
     width: 10vh;
     height: 50vh;
     position: fixed;
@@ -257,16 +224,20 @@ a {
     margin-left: 8px;
     img {
         height: 40px;
+        transition: 0.2s ease-in-out;
     }
     :hover {    
         transform: scale(1.1);
-        transition: 0.3s ease-in-out;
-        transform-origin: center;
     }
 }
 
+// Modal
+.modal-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 // Screen responsivness
-
 @media (max-width: 900px) {
     .pages h3{
         color: transparent;
@@ -274,13 +245,13 @@ a {
 }
 
 @media (max-width: 600px) {
-    .social-container {
+    .social-cont {
         display: none;
     }
 }
 
 @media (max-height: 555px) {
-  .social-container {
+  .social-cont {
       img{
         height: 20px;
       }

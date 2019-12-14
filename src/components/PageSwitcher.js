@@ -13,7 +13,7 @@ const PageSwitcher = props => {
         break;
       case 1:
         document
-          .querySelector(".portfolio")
+          .querySelector(".projects")
           .scrollIntoView({ behavior: "smooth" });
         break;
       case 2:
@@ -41,7 +41,7 @@ const PageSwitcher = props => {
       props.history.push("/");
     } else if (scrolled > 0.33 && scrolled < 0.66) {
       props.setCurrPage(1);
-      props.history.push("/portfolio");
+      props.history.push("/projects");
     } else {
       props.setCurrPage(2);
       props.history.push("/commitments");
@@ -53,7 +53,7 @@ const PageSwitcher = props => {
     switch (location.pathname.toLowerCase()) {
       case "/":
         break;
-      case "/portfolio":
+      case "/projects":
         onChangPage(1);
         break;
       case "/commitments":
@@ -102,7 +102,7 @@ const PageSwitcher = props => {
       </div>
       <div className="page-projects">
         <h3 className="dot-title-2">Projects</h3>
-        <NavLink to="/portfolio">
+        <NavLink to="/projects">
           <svg
             onClick={() => {
               onChangPage(1);

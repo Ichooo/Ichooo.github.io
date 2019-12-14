@@ -72,7 +72,7 @@ a {
       grid-template-columns: 5% 0.8fr 2.4fr 0.8fr 5%;
 }
 
-.about-me {
+.about-me-container {
   -ms-grid-column: 3;
   -ms-grid-column-span: 1;
   grid-column: 3/4;
@@ -103,16 +103,16 @@ a {
 .profile-pic-border :hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 
 .me-img {
   border-radius: 50%;
   height: 250px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.about-me-title {
+.section-title {
   font-size: 40px;
   padding: 20px;
 }
@@ -122,7 +122,7 @@ a {
   font-size: 18px;
 }
 
-.portfolio {
+.projects {
   width: 100%;
   min-height: 100vh;
   -ms-grid-column: 3;
@@ -131,7 +131,7 @@ a {
   text-align: center;
 }
 
-.portfolio-container {
+.projects-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -142,67 +142,9 @@ a {
       flex-wrap: wrap;
 }
 
-.portfolio-title {
+.section-title {
   font-size: 40px;
   padding: 20px;
-}
-
-.project-border {
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  border: 3px solid #ebebeb;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin: auto;
-  margin: 1vh;
-}
-
-.project-border > :hover {
-  -webkit-transform: scale(1.22);
-          transform: scale(1.22);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-}
-
-.project {
-  border-radius: 50%;
-  background: #87A8B9;
-  height: 160px;
-  width: 160px;
-  list-style: none;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-}
-
-.project-title {
-  color: #ebebeb;
-}
-
-.project-image {
-  height: 80px;
 }
 
 .commitments {
@@ -225,18 +167,7 @@ a {
       flex-wrap: wrap;
 }
 
-.commitments-title {
-  font-size: 40px;
-  padding: 20px;
-}
-
-.box {
-  height: 40vh;
-  width: 40vh;
-  background: red;
-}
-
-.commitment-border {
+.bubble-border {
   height: 200px;
   width: 200px;
   border-radius: 50%;
@@ -255,14 +186,12 @@ a {
   margin: 1vh;
 }
 
-.commitment-border > :hover {
+.bubble-border > :hover {
   -webkit-transform: scale(1.22);
           transform: scale(1.22);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
 }
 
-.commitment {
+.bubble {
   border-radius: 50%;
   background: #87A8B9;
   height: 160px;
@@ -284,13 +213,15 @@ a {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
-.commitment-title {
+.bubble-title {
   color: #ebebeb;
 }
 
-.commitment-image {
+.bubble-image {
   height: 80px;
 }
 
@@ -314,6 +245,7 @@ a {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 10vh;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .pages svg {
@@ -340,7 +272,7 @@ a {
   margin: 30px;
 }
 
-.social-container {
+.social-cont {
   width: 10vh;
   height: 50vh;
   position: fixed;
@@ -368,17 +300,27 @@ a {
   margin-left: 8px;
 }
 
-.social-container img {
+.social-cont img {
   height: 40px;
+  -webkit-transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
-.social-container :hover {
+.social-cont :hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  -webkit-transform-origin: center;
-          transform-origin: center;
+}
+
+.modal-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media (max-width: 900px) {
@@ -388,13 +330,13 @@ a {
 }
 
 @media (max-width: 600px) {
-  .social-container {
+  .social-cont {
     display: none;
   }
 }
 
 @media (max-height: 555px) {
-  .social-container img {
+  .social-cont img {
     height: 20px;
   }
 }
