@@ -14,12 +14,15 @@ const Projects = props => {
               onClick={() => props.toggleModal(project.title)}
             >
               <div className="bubble">
+                <div className="img-container">
+                  <img
+                    className="bubble-image"
+                    src={require(`../../img/${project.image}.jpg`)}
+                    alt="projectImg"
+                  />
+                </div>
+
                 <h3 className="project-title">{project.title}</h3>
-                <img
-                  className="bubble-image"
-                  src={require(`../../img/${project.image}.jpg`)}
-                  alt="projectImg"
-                />
               </div>
             </div>
           );

@@ -14,12 +14,12 @@ const Commitments = props => {
               onClick={() => props.toggleModal(commitment.title)}
             >
               <div className="bubble">
-                <h3 className="commitment-title">{commitment.title}</h3>
                 <img
                   className="bubble-image"
                   src={require(`../../img/${commitment.image}.jpg`)}
                   alt="commitmentImg"
                 />
+                <h3 className="commitment-title">{commitment.title}</h3>
               </div>
             </div>
           );

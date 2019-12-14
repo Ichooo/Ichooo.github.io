@@ -8,12 +8,9 @@ const Modal = props => {
       contentLabel="Example Modal"
       onRequestClose={() => props.setModalIsOpen(false)}
     >
-      <div id="myModal" class="modal">
-        <div class="modal-content">
-          <h1>{props.modalContent}</h1>
-          <p style={{ color: "black" }}>Some text in the Modal..</p>
-          <button onClick={() => console.log("hehe")}>close</button>
-        </div>
+      <div class="modal-content">
+        <h1>{props.modalContent}</h1>
+        <button onClick={() => props.setModalIsOpen(false)}>close</button>
       </div>
     </ReactModal>
   );

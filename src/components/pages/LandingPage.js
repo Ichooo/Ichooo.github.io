@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 
 import Nav from "../Nav";
 import Modal from "../Modal";
+import Welcome from "./Weclome";
 import AboutMe from "./AboutMe";
 import PageSwitcher from "../PageSwitcher";
 import Projects from "./Projects";
@@ -21,9 +22,9 @@ const LandingPage = () => {
   };
 
   return (
-    <div className="new">
+    <div className="landing">
       <Nav />
-      <SocialIcons />
+
       <PageSwitcher currPage={currentPage} setCurrPage={setCurrentPage} />
       <div className="main">
         <Modal
@@ -31,6 +32,7 @@ const LandingPage = () => {
           modalContent={modalContent}
           setModalIsOpen={setModalIsOpen}
         />
+        <Welcome />
         <AboutMe />
         <Projects toggleModal={toggleModal} />
         <Commitments toggleModal={toggleModal} />

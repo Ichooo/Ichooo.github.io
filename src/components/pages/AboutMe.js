@@ -4,9 +4,6 @@ import meImg from "../../img/me.jpg";
 const AboutMe = () => {
   return (
     <div className="about-me-container">
-      <div className="profile-pic-border">
-        <img className="me-img" src={meImg} alt="Me"></img>
-      </div>
       <h3 className="section-title">ABOUT ME</h3>
       <p className="about-me-text">
         {" "}

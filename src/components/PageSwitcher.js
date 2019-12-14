@@ -13,10 +13,15 @@ const PageSwitcher = props => {
         break;
       case 1:
         document
-          .querySelector(".projects")
+          .querySelector(".about-me-container")
           .scrollIntoView({ behavior: "smooth" });
         break;
       case 2:
+        document
+          .querySelector(".projects")
+          .scrollIntoView({ behavior: "smooth" });
+        break;
+      case 3:
         document
           .querySelector(".commitments")
           .scrollIntoView({ behavior: "smooth" });
@@ -36,14 +41,17 @@ const PageSwitcher = props => {
 
     const scrolled = winScroll / height;
 
-    if (scrolled < 0.33) {
+    if (scrolled < 0.25) {
       props.setCurrPage(0);
       props.history.push("/");
-    } else if (scrolled > 0.33 && scrolled < 0.66) {
+    } else if (scrolled > 0.25 && scrolled < 0.5) {
       props.setCurrPage(1);
+      props.history.push("/about-me");
+    } else if (scrolled > 0.5 && scrolled < 0.75) {
+      props.setCurrPage(2);
       props.history.push("/projects");
     } else {
-      props.setCurrPage(2);
+      props.setCurrPage(3);
       props.history.push("/commitments");
     }
   };
@@ -53,11 +61,14 @@ const PageSwitcher = props => {
     switch (location.pathname.toLowerCase()) {
       case "/":
         break;
-      case "/projects":
+      case "/about-me":
         onChangPage(1);
         break;
-      case "/commitments":
+      case "/projects":
         onChangPage(2);
+        break;
+      case "/commitments":
+        onChangPage(3);
         break;
       default:
         break;
@@ -82,8 +93,8 @@ const PageSwitcher = props => {
 
   return (
     <div className="pages">
-      <div className="page-about">
-        <h3 className="dot-title-1">About me</h3>
+      <div className="page">
+        <h3 className="dot-title">Welcome</h3>
         <NavLink exact to="/">
           <svg
             onClick={() => {
@@ -100,12 +111,30 @@ const PageSwitcher = props => {
           </svg>
         </NavLink>
       </div>
-      <div className="page-projects">
-        <h3 className="dot-title-2">Projects</h3>
-        <NavLink to="/projects">
+      <div className="page-about">
+        <h3 className="dot-title">About me</h3>
+        <NavLink to="/about-me">
           <svg
             onClick={() => {
               onChangPage(1);
+            }}
+            className="dot-1"
+            width="24"
+            height="24"
+            viewBox="0 0 12 12"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="6" cy="6" r="6" fill="white" />
+          </svg>
+        </NavLink>
+      </div>
+      <div className="page-projects">
+        <h3 className="dot-title">Projects</h3>
+        <NavLink to="/projects">
+          <svg
+            onClick={() => {
+              onChangPage(2);
             }}
             className="dot"
             width="24"
@@ -119,11 +148,11 @@ const PageSwitcher = props => {
         </NavLink>
       </div>
       <div className="page-commitments">
-        <h3 className="dot-titlel-3">Commitments</h3>
+        <h3 className="dot-titlel">Commitments</h3>
         <NavLink to="/commitments">
           <svg
             onClick={() => {
-              onChangPage(2);
+              onChangPage(3);
             }}
             className="dot"
             width="24"
