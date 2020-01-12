@@ -11,7 +11,7 @@ const Commitments = props => {
             <div
               key={index}
               className="bubble-border"
-              onClick={() => props.toggleModal(commitment.title)}
+              onClick={() => props.toggleModal(commitment)}
             >
               <div className="bubble">
                 <img
@@ -19,7 +19,7 @@ const Commitments = props => {
                   src={require(`../../img/${commitment.image}.jpg`)}
                   alt="commitmentImg"
                 />
-                <h3 className="commitment-title">{commitment.title}</h3>
+                <h3 className="bubble-title">{commitment.title}</h3>
               </div>
             </div>
           );

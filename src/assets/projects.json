@@ -1,14 +1,24 @@
 [
     {
         "title": "Metiri",
-        "image": "tracer_thumb"
+        "subtitle": "A mobile measurement app",
+        "image": "tracer_thumb",
+        "introText": "Metiri was done as a batchelor project. The application is built for Android with ARCore to be able to measure distances in real life",
+        "extendedText": "The project was run in an agile enviroment where Scrum was used. git was used as version control and to to collaborate well within the group. The process was as follows: One was responisble for deisgn, one for database, and one for everything else.",
+        "video": "https://player.vimeo.com/video/369190884?title=0&byline=0&portrait=0&playsinline=0&autopause=0&controls=0&app_id=122963", 
+        "github": "https://github.com/arnessonpontus/AR-ruler",
+        "report": "",
+        "developedSkills": "",
+        "technologiesUsed": ["Java", "Android studio", "Scrum", "ARCore"],
+        "timeFrame": "January - June 2019",
+        "category": "AR - Mobile"
     },
     {
         "title": "Bibliutekt",
         "image": "tracer_thumb"
     },
     {
-        "title": "Ray tracer",
+        "title": "Monte Carlo Ray tracer",
         "image": "tracer_thumb"
     },
     {

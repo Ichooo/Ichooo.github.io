@@ -11,7 +11,7 @@ const Projects = props => {
             <div
               key={index}
               className="bubble-border"
-              onClick={() => props.toggleModal(project.title)}
+              onClick={() => props.toggleModal(project)}
             >
               <div className="bubble">
                 <div className="img-container">
@@ -22,7 +22,7 @@ const Projects = props => {
                   />
                 </div>
 
-                <h3 className="project-title">{project.title}</h3>
+                <h3 className="bubble-title">{project.title}</h3>
               </div>
             </div>
           );

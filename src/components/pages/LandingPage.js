@@ -11,13 +11,13 @@ import SocialIcons from "../SocialIcons";
 
 const LandingPage = () => {
   const [currentPage, setCurrentPage] = useState(0);
-  const [modalContent, setModalContent] = useState("0");
+  const [modalContent, setModalContent] = useState({});
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
   const modal = document.getElementById("myModal");
 
-  const toggleModal = bubbleID => {
-    setModalContent(bubbleID);
+  const toggleModal = content => {
+    setModalContent(content);
     setModalIsOpen(!modalIsOpen);
   };
 

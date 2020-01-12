@@ -36,23 +36,72 @@ nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   margin: auto;
   padding: 20px 0px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 1;
 }
 
 .logo {
   cursor: pointer;
-  margin-left: 8px;
+  margin-left: 15px;
+}
+
+.menu {
+  visibility: hidden;
+  justify-self: flex-end;
+  position: absolute;
+  right: 0;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #0F2635;
+  position: fixed;
+  width: 100%;
+  height: 20vh;
+  top: 0px;
+  left: 0px;
+  -webkit-transition: margin .5s;
+  transition: margin .5s;
+  margin-top: -20vh;
+}
+
+.wrapper.is-nav-open {
+  margin-top: 0;
+}
+
+.menu-item {
+  min-width: 30vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 5px;
+}
+
+.menu-item > svg {
+  margin-right: 10px;
+}
+
+.menu-item :hover {
+  cursor: pointer;
 }
 
 a {
@@ -62,7 +111,7 @@ a {
 
 .menu {
   cursor: pointer;
-  margin-right: 8px;
+  margin-right: 15px;
 }
 
 .main {
@@ -232,6 +281,7 @@ a {
 
 .bubble-title {
   color: #ebebeb;
+  font-size: 15px;
 }
 
 .bubble-image {
@@ -329,9 +379,39 @@ a {
           transform: scale(1.1);
 }
 
-.modal-content {
-  width: 100%;
-  height: 100%;
+.ReactModal__Body--open {
+  overflow: hidden;
+}
+
+.modal-title {
+  font-size: 50px;
+  margin-bottom: 5px;
+}
+
+.modal-subtitle {
+  margin-bottom: 30px;
+}
+
+.modal-introtext {
+  margin-bottom: 30px;
+}
+
+.modal-middle-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-bottom: 30px;
+}
+
+.infobox {
+  width: 20%;
+  height: 200px;
+  background-color: #F8F4F4;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -347,9 +427,38 @@ a {
           align-items: center;
 }
 
+.carousel-warpper {
+  width: 50%;
+}
+
 @media (max-width: 900px) {
   .pages h3 {
-    color: transparent;
+    visibility: hidden;
+    margin-right: -200px;
+  }
+  nav {
+    position: fixed;
+    width: 100%;
+  }
+  .welcome-container {
+    margin-top: 10vh;
+  }
+  .menu {
+    visibility: visible;
+  }
+  .modal-middle-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .infobox {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .carousel-warpper {
+    width: 100%;
+    margin-bottom: 20px;
   }
 }
 
